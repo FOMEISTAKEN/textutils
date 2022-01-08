@@ -16,8 +16,19 @@ function App() {
 <div>
     <Navbar title="RJC" aboutText="About RJC"/>
 <div className="container">
+  <Router>
+  <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+
+          <Route path="/">
     <TextForm name="Your Text" heading="Enter Your text"/>
-    <About/>
+            
+          </Route>
+        </Switch>
+  </Router>
+
 
 </div>
 </div>
