@@ -18,9 +18,20 @@ const handleDownlClick = () =>{
     let newText = text.toLowerCase();
     setText(newText);
 }
+const handleClearlClick = () =>{
+    // console.log("Up Button was clicked" + text);
+    setText("");
+}
 const handleOnChange = (event) =>{
     setText(event.target.value)
 }
+const handletextExtract =()=>{
+    const fome = /[0-9/A-Z/a-z/ /]/g;
+
+    const letters = text.match(fome);
+    const res1 = letters.join('');
+    setText(res1)
+    };
     return (
      <>
       
@@ -31,6 +42,8 @@ const handleOnChange = (event) =>{
             </div>
             <button onClick={handleUpClick}  className="btn btn-primary mx-2">Convert To Uppercase</button>
             <button onClick={handleDownlClick}  className="btn btn-primary mx-2">Convert To lowercase</button>
+            <button onClick={handleClearlClick}  className="btn btn-primary mx-2">Clear All</button>
+            <button onClick={handletextExtract}  className="btn btn-primary mx-2">Remove ., etc</button>
             <div className="container my-2">
                 <h1>Your text summary</h1>
                 <p>{text.split(" ").length} words, {text.length} characters.</p>
