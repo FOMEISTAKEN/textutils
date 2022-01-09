@@ -2,33 +2,34 @@ import React, {useState} from 'react'
 // import { Accordion } from 'react-bootstrap'
 
 export default function About() {
-    const [btntext, setBtnText] = useState("Enable Light Mode")
 
 
     const [mystyle, setMystyle] = useState(  {
-        color: 'white',
-        backgroundColor: 'black',
+        color: 'black',
+        backgroundColor: 'white',
         border: '1px solid white',
         borderRadius: '5px'
 
     })
+    const [btntext, setBtnText] = useState("Enable Dark Mode")
+
     
     const  toggleStyle = () =>{
-         if (mystyle.color == 'white') {
+         if (mystyle.color === 'black') {
             setMystyle({
-                color: 'black',
-                backgroundColor: 'white',
+                color: 'white',
+                backgroundColor: 'black',
                 border: '1px solid white',
                 borderRadius: '5px'
             })
-            setBtnText("Enable Dark Mode")
+            setBtnText("Enable Light Mode")
         }
      else{
         setMystyle({
-            color: 'white',
-            backgroundColor: 'black'
+            color: 'black',
+            backgroundColor: 'white'
         })
-        setBtnText("Enable Light Mode")
+        setBtnText("Enable Dark Mode")
      }
 
     }
@@ -37,6 +38,7 @@ export default function About() {
     
   
     return (
+        
        <div className='container my-3'  style={mystyle}>
                         <center> <h2>About Us</h2> </center>
                         <div className="accordion" id="accordionExample" style={mystyle}>
@@ -80,10 +82,11 @@ export default function About() {
                   
                 
             <div className="container">
-            <button style={mystyle}  onClick={toggleStyle} className="btn btn-dark my-3">{btntext}</button>
+            <button onClick={toggleStyle} className="btn btn-primary my-3">{btntext}</button>
 
             </div>
 </div>
+
     )
 }
 

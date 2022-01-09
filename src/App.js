@@ -1,37 +1,43 @@
 import './App.css';
-import React from 'react'
+import React,{useState} from 'react'
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import About from './components/About';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import Alert from './components/Alert';
+
 
 
 function App() {
+
+  const [mode, setMode] = useState('light')
+  const toggleMode = () =>{
+    if (mode === 'light') {
+      setMode('dark');
+      document.body.style.backgroundColor= "#042743"
+    }
+    else{
+      setMode('light');
+      document.body.style.backgroundColor= "white"
+
+    }
+  }
   return (
+    <>   
 <div>
-    <Navbar title="RJC" aboutText="About RJC"/>
-<div className="container">
-  <Router>
-  <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
+    <Navbar title="RJC" aboutText="About RJC" mode={mode} toggleMode={toggleMode}/>
+    <Alert alert="This is alert"/>
+    <div className="container">
 
-          <Route path="/">
-    <TextForm name="Your Text" heading="Enter Your text"/>
-            
-          </Route>
-        </Switch>
-  </Router>
+  <TextForm name="Your Text" heading="Enter Your text" mode={mode}/>
 
-
+ 
+    {/* <About/> */}
+    
+  </div>  
 </div>
-</div>
+
+</>
+
   );
 }
 
