@@ -18,6 +18,7 @@ export default function Navbar(props) {
          <li className="nav-item">
            <a className="nav-link active" aria-current="page" href="">Home</a>
          </li>
+       
          <li className="nav-item">
           <a className="nav-link" href="/about" >{props.aboutText}</a>
          </li>
@@ -38,6 +39,7 @@ export default function Navbar(props) {
          <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
          <button className="btn btn-outline-success" type="submit">Search</button>
        </form> */}
+        
        <div className={`form-check form-switch text-${props.mode === 'light'?'dark':'light'}`}>
   <input onClick={props.toggleMode} className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
   <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Dark Mode</label>
