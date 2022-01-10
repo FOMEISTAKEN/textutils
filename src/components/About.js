@@ -11,33 +11,34 @@ export default function About() {
         borderRadius: '5px'
 
     })
-    const [btntext, setBtnText] = useState("Enable Dark Mode")
+    // const [btntext, setBtnText] = useState("Enable Dark Mode")
 
     
-    const  toggleStyle = () =>{
-         if (mystyle.color === 'black') {
-            setMystyle({
-                color: 'white',
-                backgroundColor: 'black',
-                border: '1px solid white',
-                borderRadius: '5px'
-            })
-            setBtnText("Enable Light Mode")
-        }
-     else{
-        setMystyle({
-            color: 'black',
-            backgroundColor: 'white'
-        })
-        setBtnText("Enable Dark Mode")
-     }
+    // const  toggleStyle = () =>{
+    //      if (mystyle.color === 'black') {
+    //         setMystyle({
+    //             color: 'white',
+    //             backgroundColor: 'black',
+    //             border: '1px solid white',
+    //             borderRadius: '5px'
+    //         })
+    //         setBtnText("Enable Light Mode")
+    //     }
+    //  else{
+    //     setMystyle({
+    //         color: 'black',
+    //         backgroundColor: 'white'
+    //     })
+    //     setBtnText("Enable Dark Mode")
+    //  }
 
-    }
+    // }
     
     
-    
+
   
     return (
+        
         
        <div className='container my-3'  style={mystyle}>
                         <center> <h2>About Us</h2> </center>
@@ -45,7 +46,7 @@ export default function About() {
             <div className="accordion-item"  style={mystyle}>
                 <h2 className="accordion-header" id="headingOne">
                 <button  style={mystyle} className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Accordion Item #1
+                    Analyze your text
                 </button>
                 </h2>
                 <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -81,10 +82,11 @@ export default function About() {
             </div>
                   
                 
-            <div className="container">
+            {/* <div className="container">
             <button onClick={toggleStyle} className="btn btn-primary my-3">{btntext}</button>
 
-            </div>
+            </div> */}
+            <script>document.title = "RJC - About"</script>
 </div>
 
     )

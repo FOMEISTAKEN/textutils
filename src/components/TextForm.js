@@ -60,14 +60,14 @@ const handleExtraSpaces = () =>{
                 <label htmlFor="myBox" className="form-label"></label>
                 <textarea value={text} onChange={handleOnChange} className={`form-control text-${props.mode === 'light'?'dark':'light'}`} style={{backgroundColor: props.mode === 'light'?'white':'#042743'}} id="myBox" rows="8"></textarea>
             </div>
-            <button onClick={handleUpClick}  className="btn btn-primary mx-2">Convert To Uppercase</button>
-            <button onClick={handleDownlClick}  className="btn btn-primary mx-2">Convert To lowercase</button>
-            <button onClick={handleClearClick}  className="btn btn-primary mx-2">Clear All</button>
-            <button onClick={handleCopy}  className="btn btn-primary mx-2">Copy Text</button>
-            <button onClick={handleExtraSpaces}  className="btn btn-primary mx-2">Remove Extra spaces</button>
+            <button onClick={handleUpClick}  className="btn btn-primary mx-2 my-2 p-1">Convert To Uppercase</button>
+            <button onClick={handleDownlClick}  className="btn btn-primary mx-2 my-2 p-1">Convert To lowercase</button>
+            <button onClick={handleClearClick}  className="btn btn-primary mx-2 my-2 p-1">Clear All</button>
+            <button onClick={handleCopy}  className="btn btn-primary mx-2 my-2 p-1">Copy Text</button>
+            <button onClick={handleExtraSpaces}  className="btn btn-primary mx-2 my-2 p-1">Remove Extra spaces</button>
             <div className="container my-2">
                 <h1 >Your text summary</h1>
-                <p >{text.length>0 ? text.trim().split(" ").length : 0} word{`${text.length>1?'s':''}`}, {text.length} characters.</p>
+                <p >{text.split(" ").filter((element) =>{return element.length!=0}).length} word{`${text.split(" ").filter((element) =>{return element.length!=0}).length>1?'s':''}`}, {text.length} characters.</p>
                 <p >The Time it would take an average person to read : {0.39 * text.split(" ").length } seconds</p>
                 <h3 >
                     PREVIEW
